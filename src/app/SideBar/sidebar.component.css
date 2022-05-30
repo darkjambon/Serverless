@@ -1,0 +1,10 @@
+body {
+}
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.portfolio-image {
+}
