@@ -23,6 +23,8 @@ export class AppComponent implements OnInit {
           this.info.bearer = token;
         });
         this.info.uid = user.uid;
+        if (user.email)
+          this.info.pseudo = user.email
       } else {
         this.router.navigate(['/']);
       }
