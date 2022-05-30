@@ -1,12 +1,7 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { SignalrService } from '../services/signalr.service';
-import { HttpClient } from '@angular/common/http';
 import { Info } from '../services/Info.service';
 import { ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs';
 import { ImageService } from '../services/image.service';
-import { getMessaging, getToken, onMessage } from "firebase/messaging";
-import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-portfolio-detail',

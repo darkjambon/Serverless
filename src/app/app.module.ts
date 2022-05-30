@@ -55,7 +55,6 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { PortfolioComponent } from './portfolio/portfolio.component';
-import { HomeComponent } from './Home/home.component';
 import { PortfolioDetailComponent } from './portfolio-detail/portfolio-detail.component';
 import { SideBarComponent } from './SideBar/sidebar.component';
 import { LoginComponent } from './login/login.component';
@@ -70,7 +69,6 @@ import { AddFileComponent } from './add-file/add-file.component';
     SideBarComponent,
     AppComponent,
     PortfolioComponent,
-    HomeComponent,
     AddFileComponent,
     PortfolioDetailComponent
   ],
