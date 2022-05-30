@@ -44,10 +44,9 @@ export class AddFileComponent implements OnInit, OnDestroy {
         fileEntry.file((file: File) => {
 
           if (!(file.type === 'image/png'
-            || file.type === 'application/pdf'
-            || file.type === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+            || file.type === 'image/gif'
             || file.type === 'image/jpeg')) {
-            this.error.showError("Only accept .pdf, .docx, .jpeg, .png")
+            this.error.showError("Only accept .gif, .jpeg, .png")
             return
           }
 
