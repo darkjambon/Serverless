@@ -61,7 +61,6 @@ export class AddFileComponent implements OnInit, OnDestroy {
 
               switch (event.type) {
                 case HttpEventType.Sent:
-                  this.api.createChat(file.name).subscribe((e: any) => console.log(e))
                   if (isDevMode()) {
                     console.log('Request has been made!');
                   }
@@ -78,6 +77,7 @@ export class AddFileComponent implements OnInit, OnDestroy {
                   break;
                 case HttpEventType.Response:
                   this.isLoading = false;
+                  this.api.createChat(file.name).subscribe((e: any) => console.log(e))
                   if (isDevMode()) {
                     console.log('File sent', event.body);
                   }
@@ -86,6 +86,7 @@ export class AddFileComponent implements OnInit, OnDestroy {
               }
             },
             error: (error: any) => {
+              console.error(error);
               this.isLoading = false;
               this.progress = -1;
             }

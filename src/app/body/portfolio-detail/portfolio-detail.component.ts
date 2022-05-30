@@ -1,7 +1,7 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ImageService } from 'src/app/core/_services/image.service';
-import { Info } from 'src/app/core/_services/Info.service';
+import { Info } from 'src/app/core/_services/info.service';
 
 @Component({
   selector: 'app-portfolio-detail',

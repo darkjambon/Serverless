@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Auth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { AuthentificationService } from './core/_services/authentification.service';
-import { Info } from './core/_services/Info.service';
+import { Info } from './core/_services/info.service';
 
 @Component({
   selector: 'app-root',
