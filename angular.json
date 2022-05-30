@@ -3,9 +3,12 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Portfolio2._0": {
+    "serverless-archicture": {
       "projectType": "application",
       "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
         "@schematics/angular:application": {
           "strict": true
         }
@@ -17,21 +20,19 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "progress": false,
-            "outputPath": "dist",
+            "outputPath": "dist/serverless-archicture",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
             "assets": [
-              "src/assets",
-              "src/firebase-messaging-sw.js",
-              "src/manifest.json"
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -72,11 +73,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Portfolio2._0:build:production"
+              "browserTarget": "serverless-archicture:build:production"
             },
             "development": {
-              "browserTarget": "Portfolio2._0:build:development",
-              "proxyConfig": "proxy.conf.js"
+              "browserTarget": "serverless-archicture:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -84,7 +84,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Portfolio2._0:build"
+            "browserTarget": "serverless-archicture:build"
           }
         },
         "test": {
@@ -94,46 +94,30 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
+            "inlineStyleLanguage": "scss",
             "assets": [
-              "src/assets",
-              "src/firebase-messaging-sw.js",
-              "src/manifest.json"
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           }
         },
-        "server": {
-          "builder": "@angular-devkit/build-angular:server",
+        "deploy": {
+          "builder": "@angular/fire:deploy",
           "options": {
-            "outputPath": "dist-server",
-            "main": "src/main.ts",
-            "tsConfig": "tsconfig.server.json"
-          },
-          "configurations": {
-            "dev": {
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": true
-            },
-            "production": {
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false
-            }
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "serverless-archicture:build:production",
+            "firebaseProject": "epitech-serverless",
+            "firebaseHostingSite": "epitech-serverless"
           }
         }
       }
     }
   },
-  "defaultProject": "Portfolio2._0"
+  "defaultProject": "serverless-archicture"
 }

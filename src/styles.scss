@@ -1,0 +1,135 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~@angular/material/theming';
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    color: var(--text_color)!important;
+}
+
+:root {
+    --background_color: #ffffff;
+    --text_color: #000000;
+    --text_color_sec: #8E8E8E;
+}
+
+.aligner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.aligner-item {
+    max-width: 50vw;
+}
+
+.aligner-item--top {
+    align-self: flex-start;
+}
+
+.aligner-item--bottom {
+    align-self: flex-end;
+}
+
+.mat-focused .mat-form-field-label,
+.mat-list-item {
+    /*change color of label*/
+    color: var(--text_color) !important;
+}
+
+.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: var(--text_color_sec) !important;
+}
+
+.mat-form-field-ripple {
+    /*change color of underline when focused*/
+    background-color: var(--text_color_sec) !important;
+    ;
+}
+
+.mat-form-field-label {
+    color: var(--text_color_sec)!important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px var(--background_color) inset !important;
+}
+
+input:-webkit-autofill {
+    -webkit-text-fill-color: var(--text_color) !important;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.clickable {
+    cursor: pointer;
+    &:hover {
+        @include mat-elevation(10);
+    }
+}
+
+.configError {
+    color: whitesmoke;
+    background-color: red;
+    font-size: 40px!important;
+}
+
+.configGood {
+    color: whitesmoke;
+    background-color: green;
+    font-size: 40px!important;
+}
+
+.mat-drawer-inner-container::-webkit-scrollbar {
+    width: 7px;
+    height: 5px;
+}
+
+.mat-drawer-inner-container::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+}
+
+.mat-drawer-inner-container::-webkit-scrollbar-thumb {
+    background: #e1e1e1;
+    border: 0px none #ffffff;
+    border-radius: 50px;
+}
+
+.mat-drawer-inner-container::-webkit-scrollbar-thumb:hover {
+    background: #ffffff;
+}
+
+.mat-drawer-inner-container::-webkit-scrollbar-thumb:active {
+    background: #424242;
+}
+
+.mat-drawer-inner-container::-webkit-scrollbar-track {
+    background: #666666;
+    border: 0px none #ffffff;
+    border-radius: 50px;
+}
+
+.mat-drawer-inner-container::-webkit-scrollbar-track:hover {
+    background: #666666;
+}
+
+.mat-drawer-inner-container::-webkit-scrollbar-track:active {
+    background: #626262;
+}
+
+.mat-drawer-inner-container::-webkit-scrollbar-corner {
+    background: transparent;
+}
