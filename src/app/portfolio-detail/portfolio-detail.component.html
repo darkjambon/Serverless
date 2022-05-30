@@ -12,18 +12,12 @@
       <mat-form-field appearance="outline" class="messageBox">
         <mat-label>Ton message</mat-label>
         <input matInput [(ngModel)]="message">
-        <button class="messageButton" mat-raised-button>
+        <button class="messageButton" mat-raised-button (click)="sendMessage()">
           <mat-icon>send</mat-icon>
         </button>
       </mat-form-field>
     <mat-card>
-        <div *ngIf="messageGet;">
-          <mat-card-content>{{ messageGet.notification.title }}</mat-card-content>
-          <mat-card-content>{{ messageGet.notification.body }}</mat-card-content>
-        </div>
-        <div *ngIf="!messageGet;">
-          No Message Arrived
-        </div>
+      <mat-card-content *ngFor="let message of messageList"><p>{{message.message}}</p></mat-card-content>
     </mat-card>
   </div>
 </div>

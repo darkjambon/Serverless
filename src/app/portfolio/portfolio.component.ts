@@ -35,7 +35,5 @@ export class PortfolioComponent implements OnInit {
   init() {
     this.imageService.images = [];
     this.imageService.index = 0;
-    let index = 0;
-    
   }
 }
